@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+    color: #202b3c;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 230px;
+    flex-shrink: 0;
+    background: #192b49;
+    color: white;
+    padding: 30px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 45px;
+}
+
+.nav-heading {
+    color: #aebbd0;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.sidebar a {
+    display: block;
+    color: #d4dbea;
+    text-decoration: none;
+    padding: 13px;
+    margin-bottom: 8px;
+    border-radius: 7px;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+    background: #344d73;
+    color: white;
+}
+
+/* Main dashboard */
+.main {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 27px;
+    margin-bottom: 7px;
+}
+
+.header p {
+    color: #7b8495;
+    font-size: 14px;
+}
+
+.status {
+    background: #e5f7ed;
+    color: #16834f;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* Summary cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #e8ebf1;
+}
+
+.card p {
+    color: #7b8495;
+    font-size: 14px;
+    margin-bottom: 13px;
+}
+
+.card h2 {
+    font-size: 24px;
+}
+
+/* Panels */
+.panel {
+    background: white;
+    border: 1px solid #e8ebf1;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 25px;
+}
+
+.panel h3 {
+    margin-bottom: 8px;
+}
+
+.subtext {
+    color: #8490a1;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/* Debit and credit summary */
+.balance-box {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.balance-item {
+    flex: 1;
+    background: #f1f4fc;
+    padding: 18px;
+    border-radius: 9px;
+}
+
+.balance-item:last-child {
+    background: #eaf7ef;
+}
+
+.balance-item p {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.balance-item h2 {
+    font-size: 22px;
+}
+
+.check {
+    color: #16834f;
+    background: #e5f7ed;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+/* Transaction form */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #566174;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce1e9;
+    border-radius: 7px;
+    font-size: 14px;
+    outline: none;
+    background: white;
+}
+
+input:focus,
+select:focus {
+    border-color: #416ff1;
+}
+
+button {
+    background: #3b6ff5;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 18px;
+}
+
+button:hover {
+    background: #2859d9;
+}
+
+/* Transaction table */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 15px 12px;
+    border-bottom: 1px solid #edf0f4;
+    font-size: 13px;
+}
+
+th {
+    background: #f7f8fb;
+    color: #7b8495;
+    font-size: 11px;
+}
+
+.received {
+    color: #16834f;
+    font-weight: bold;
+}
+
+.paid {
+    color: #d05b5b;
+    font-weight: bold;
+}
+
+.empty {
+    text-align: center;
+    color: #888;
+    padding: 25px;
+}
+
+.footer {
+    color: #929baa;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Responsive layout */
+@media (max-width: 1000px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        padding: 18px;
+    }
+
+    .cards {
+        gap: 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card h2 {
+        font-size: 19px;
+    }
+
+    .header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .balance-box {
+        flex-direction: column;
+    }
+}
